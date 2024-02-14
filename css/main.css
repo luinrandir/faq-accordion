@@ -48,3 +48,25 @@ svg {
   --fw-700: 700;
   --ff-primary: "Work Sans";
 }
+/* Shared Styles */
+.title {
+  color: var(--pclr-dark-purple);
+  font-weight: var(--fw-600);
+  font-size: 1.125rem;
+  line-height: normal;
+}
+
+.hidden {
+  display: none;
+}
+/* Main Styles */
+body {
+  background: var(--nclr-pink);
+  background-image: url("../assets/images/background-pattern-desktop.svg");
+  background-repeat: no-repeat;
+  background-position: top;
+  font-family: var(--ff-primary);
+  display: grid;
+  place-content: center;
+}
+

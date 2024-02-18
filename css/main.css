@@ -1,3 +1,4 @@
+/* stylelint-disable selector-class-pattern */
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap");
 
 /* Reset */
@@ -48,6 +49,7 @@ svg {
   --fw-700: 700;
   --ff-primary: "Work Sans";
 }
+
 /* Shared Styles */
 .title {
   color: var(--pclr-dark-purple);
@@ -59,6 +61,7 @@ svg {
 .hidden {
   display: none;
 }
+
 /* Main Styles */
 body {
   background: var(--nclr-pink);
@@ -70,3 +73,54 @@ body {
   place-content: center;
 }
 
+.accordion {
+  background: var(--nclr-white);
+  max-width: 600px;
+  padding: 40px;
+  display: grid;
+  gap: 32px;
+  border-radius: 16px;
+  box-shadow: 0 32px 56px 0 rgb(80 0 118 /10%);
+}
+
+.accordion__title {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.accordion__title > h1 {
+  font-size: 3.5rem;
+  font-weight: var(--fw-700);
+}
+
+.accordion__body {
+  display: grid;
+  gap: 24px;
+}
+
+.accordion__body .accordion__section:not(:last-child) {
+  border-bottom: solid 2px;
+  border-color: var(--nclr-pink);
+  padding-bottom: 24px;
+}
+
+.accordion__section {
+  display: grid;
+  gap: 24px;
+}
+
+.accordion__section > button {
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.accordion__section > p {
+  color: var(--pclr-gray-purple);
+  font-size: 1rem;
+}

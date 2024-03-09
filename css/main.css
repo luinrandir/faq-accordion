@@ -40,6 +40,7 @@ svg {
   /* Colors */
   --nclr-white: hsl(0deg 0% 100%);
   --nclr-pink: hsl(275deg 100% 97%);
+  --nclr-dark-pink: hsl(281deg 83% 54%);
   --pclr-gray-purple: hsl(292deg 16% 49%);
   --pclr-dark-purple: hsl(292deg 42% 14%);
 
@@ -99,18 +100,18 @@ body {
   gap: 24px;
 }
 
+.accordion__section {
+  display: grid;
+  gap: 24px;
+}
+
 .accordion__body .accordion__section:not(:last-child) {
   border-bottom: solid 2px;
   border-color: var(--nclr-pink);
   padding-bottom: 24px;
 }
 
-.accordion__section {
-  display: grid;
-  gap: 24px;
-}
-
-.accordion__section > button {
+.accordion__button {
   display: flex;
   align-self: stretch;
   align-items: center;
@@ -118,6 +119,11 @@ body {
   background-color: transparent;
   border: none;
   outline: none;
+  cursor: pointer;
+}
+
+.accordion__button > h2:hover {
+  color: var(--nclr-dark-pink);
 }
 
 .accordion__section > p {

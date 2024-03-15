@@ -76,7 +76,7 @@ body {
 
 .accordion {
   background: var(--nclr-white);
-  max-width: 600px;
+  width: 600px;
   padding: 40px;
   display: grid;
   gap: 32px;
@@ -101,17 +101,6 @@ body {
 }
 
 .accordion__section {
-  display: grid;
-  gap: 24px;
-}
-
-.accordion__body .accordion__section:not(:last-child) {
-  border-bottom: solid 2px;
-  border-color: var(--nclr-pink);
-  padding-bottom: 24px;
-}
-
-.accordion__button {
   display: flex;
   align-self: stretch;
   align-items: center;
@@ -122,11 +111,37 @@ body {
   cursor: pointer;
 }
 
-.accordion__button > h2:hover {
-  color: var(--nclr-dark-pink);
+.accordion__body .accordion__section:not(:last-child) {
+  border-bottom: solid 2px;
+  border-color: var(--nclr-pink);
+  padding-bottom: 24px;
 }
 
 .accordion__section > p {
   color: var(--pclr-gray-purple);
   font-size: 1rem;
+}
+
+summary {
+  padding-bottom: 1rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+summary::after {
+  content: "";
+  width: 30px;
+  height: 30px;
+  background: url("../assets/images/icon-plus.svg") no-repeat;
+  background-size: cover;
+}
+
+details[open] > summary::after {
+  background: url("../assets/images/icon-minus.svg") no-repeat;
+}
+
+summary:hover {
+  color: var(--nclr-dark-pink);
 }

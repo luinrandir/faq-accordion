@@ -49,13 +49,16 @@ svg {
   --fw-600: 600;
   --fw-700: 700;
   --ff-primary: "Work Sans";
+  --fs-section: 1rem;
+  --fs-title: 1.125rem;
+  --fs-main-title: 3.5rem;
 }
 
 /* Shared Styles */
 .title {
   color: var(--pclr-dark-purple);
   font-weight: var(--fw-600);
-  font-size: 1.125rem;
+  font-size: var(--fs-title);
   line-height: normal;
 }
 
@@ -88,10 +91,11 @@ body {
   display: flex;
   gap: 24px;
   align-items: center;
+  align-self: stretch;
 }
 
 .accordion__title > h1 {
-  font-size: 3.5rem;
+  font-size: var(--fs-main-title);
   font-weight: var(--fw-700);
 }
 
@@ -101,6 +105,8 @@ body {
 }
 
 .accordion__section {
+  --padding: 24px;
+
   display: flex;
   align-self: stretch;
   align-items: center;
@@ -111,37 +117,70 @@ body {
   cursor: pointer;
 }
 
-.accordion__body .accordion__section:not(:last-child) {
+.accordion__section:not(:last-child) {
+  padding-bottom: var(--padding);
   border-bottom: solid 2px;
   border-color: var(--nclr-pink);
-  padding-bottom: 24px;
 }
 
 .accordion__section > p {
+  padding-top: var(--padding);
   color: var(--pclr-gray-purple);
-  font-size: 1rem;
+  font-size: var(--fs-section);
 }
 
 summary {
-  padding-bottom: 1rem;
   list-style: none;
   display: flex;
   align-items: center;
+  align-self: stretch;
   justify-content: space-between;
 }
 
 summary::after {
-  content: "";
+  content: url("../assets/images/icon-plus.svg");
   width: 30px;
   height: 30px;
-  background: url("../assets/images/icon-plus.svg") no-repeat;
-  background-size: cover;
 }
 
 details[open] > summary::after {
-  background: url("../assets/images/icon-minus.svg") no-repeat;
+  content: url("../assets/images/icon-minus.svg");
 }
 
 summary:hover {
   color: var(--nclr-dark-pink);
+}
+
+/* Media Queries */
+@media (width <= 425px) {
+  :root {
+    --fs-main-title: 2rem;
+    --fs-title: 1rem;
+    --fs-section: 0.875rem;
+  }
+
+  main {
+    padding-inline: 24px;
+  }
+
+  .accordion {
+    padding: 24px;
+    width: auto;
+    gap: 24px;
+  }
+
+  .accordion__title > img {
+    width: 24px;
+    height: 24px;
+  }
+
+  summary {
+    gap: 24px;
+  }
+}
+
+@media (width <= 375px) {
+  body {
+    background-image: url("../assets/images/background-pattern-mobile.svg");
+  }
 }
